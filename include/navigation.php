@@ -20,8 +20,8 @@
                 $query_selection = mysqli_query($connection, $query);
                 if ($query_selection) {
                     while ($row = mysqli_fetch_assoc($query_selection)) {
-                        $cat_title = $row['cat_title'];
-                        echo "<a href='#'><li>{$cat_title}</li></a>";
+                        $title = $row['title'];
+                        echo "<a href='#'><li>{$title}</li></a>";
                     }
                 }
 

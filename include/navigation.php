@@ -18,11 +18,9 @@
 
                 $query = "SELECT * FROM categories";
                 $query_selection = mysqli_query($connection, $query);
-                if ($query_selection) {
-                    while ($row = mysqli_fetch_assoc($query_selection)) {
-                        $title = $row['title'];
-                        echo "<a href='#'><li>{$title}</li></a>";
-                    }
+                while ($row = mysqli_fetch_assoc($query_selection)) {
+                    $title = $row['title'];
+                    echo "<a href='#'><li>{$title}</li></a>";
                 }
 
             ?>

@@ -14,16 +14,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
 
-            <?php
-
-                $query = "SELECT * FROM categories";
-                $query_selection = mysqli_query($connection, $query);
-                while ($row = mysqli_fetch_assoc($query_selection)) {
-                    $title = $row['title'];
-                    echo "<a href='#'><li>{$title}</li></a>";
-                }
-
-            ?>
+            
                 <!-- <li>
                     <a href="#">About</a>
                 </li>

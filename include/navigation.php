@@ -1,3 +1,4 @@
+<!-- <?php include "db.php" ?> -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -14,11 +15,20 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
 
-            
-                <!-- <li>
-                    <a href="#">About</a>
-                </li>
+            <?php
+
+
+            $query = "SELECT * FROM categories";
+            $result = mysqli_query($connection,$query);
+            while ($row = mysqli_fetch_assoc($result)) {    
+                $title = $row['title'];
+                echo "<li><a href='#'>{$title}</a></li>";
+            }
+            ?>
                 <li>
+                    <a href="admin">Admin</a>
+                </li>
+                <!-- <li>
                     <a href="#">Services</a>
                 </li>
                 <li>

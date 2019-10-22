@@ -1,10 +1,10 @@
-<?php include "include/header.php" ?>
+<?php include "include/admin_header.php" ?>
 
 <body>
 
     <div id="wrapper">
 
-        <?php include "include/navigation.php" ?>
+        <?php include "include/admin_navigation.php" ?>
 
         <div id="page-wrapper">
 

@@ -18,7 +18,7 @@
                             <small>Author</small>
                         </h1>
                         <div class="col-lg-6">
-                            <form action="" method="post">
+                            <form action="" method="post"> <!-- INSER CATEGORY FORM -->
                                 <div class="form-group">
                                     <label for="title">Add Category</label>
                                     <input type="text" class= "name-control" name="title">
@@ -27,11 +27,32 @@
                                     <input class="btn btn-primary" type="submit" name="submit" type="submit" value="submit">
                                 </div>
                             </form>
+
+                            <form action="" method="post">
+                                <div class="form-group">
+                                    <label for="title">Update Category</label>
+
+                                    <?php 
+                                    $query = "SELECT * FROM categories";
+                                    $select_categories = mysqli_query($connection, $query);
+
+                                    while ($row = mysqli_fetch_assoc($select_categories)) {
+                                    $id = $row['id'];
+                                    $title = $row['title'];
+                                    ?>
+
+
+                                    <input type="text" class= "name-control" name="title">
+                                </div>
+                                <div class="form-group">
+                                    <input class="btn btn-primary" type="submit" name="submit" type="submit" value="update">
+                                </div>
+                            </form>
                         </div>
 
                         <div class="col-xs-6">
 
-                        <?php
+                        <?php // INSERT CATEGORY
                         
                         if(isset($_POST['submit'])) {
                             $title = $_POST['title'];
@@ -71,6 +92,7 @@
                                     echo "<td>{$id}</td>";
                                     echo "<td>{$title}</td>";
                                     echo "<td><a href='categories.php?delete={$id}'>Delete</a></td>";
+                                    echo "<td><a href='categories.php?edit={$id}'>Update</a></td>";
                                     echo "</tr>";
                                     }
 
@@ -112,3 +134,4 @@
 </body>
 
 </html>
+

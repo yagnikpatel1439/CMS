@@ -1,5 +1,6 @@
 <?php include "include/admin_header.php" ?>
 
+<html>
 <body>
 
     <div id="wrapper">
@@ -18,7 +19,7 @@
                             <small>Author</small>
                         </h1>
                         <div class="col-lg-6">
-                            <form action="" method="post"> <!-- INSER CATEGORY FORM -->
+                            <form action="" method="post"> <!-- INSERT CATEGORY FORM -->
                                 <div class="form-group">
                                     <label for="title">Add Category</label>
                                     <input type="text" class= "name-control" name="title">
@@ -28,18 +29,24 @@
                                 </div>
                             </form>
 
-                            <form action="" method="post">
+                            <form action="" method="post"> <!-- UPDATE CATEGORY FORM -->
                                 <div class="form-group">
                                     <label for="title">Update Category</label>
 
                                     <?php 
-                                    $query = "SELECT * FROM categories";
-                                    $select_categories = mysqli_query($connection, $query);
+                                    if (isset($_GET['update'])) {
+                                        $cat_id = $_GET['update'];
 
-                                    while ($row = mysqli_fetch_assoc($select_categories)) {
-                                    $id = $row['id'];
-                                    $title = $row['title'];
+                                        $query = "SELECT * FROM categories";
+                                        $select_categories_id = mysqli_query($connection, $query);
+
+                                        while ($row = mysqli_fetch_assoc($select_categories_id)) {
+                                        $id = $row['id'];
+                                        $title = $row['title'];
+                                    
                                     ?>
+                                    <input type="text" value="<?php if(isset($title)) {echo $title;} ?>" class="form-control"> 
+                                    <?php }} ?>
 
 
                                     <input type="text" class= "name-control" name="title">
@@ -134,4 +141,3 @@
 </body>
 
 </html>
-

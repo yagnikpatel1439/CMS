@@ -34,25 +34,25 @@
                                     <label for="title">Update Category</label>
 
                                     <?php 
-                                    if (isset($_GET['update'])) {
-                                        $cat_id = $_GET['update'];
+                                    if (isset($_GET['edit'])) {
+                                        $cat_id = $_GET['edit'];
 
-                                        $query = "SELECT * FROM categories";
+                                        $query = "SELECT * FROM categories WHERE id = $cat_id";
                                         $select_categories_id = mysqli_query($connection, $query);
 
                                         while ($row = mysqli_fetch_assoc($select_categories_id)) {
-                                        $id = $row['id'];
-                                        $title = $row['title'];
+                                        $cat_id = $row['id'];
+                                        $cat_title = $row['title'];
                                     
                                     ?>
-                                    <input type="text" value="<?php if(isset($title)) {echo $title;} ?>" class="form-control"> 
+                                    <input type="text" value="<?php if(isset($cat_title)) {echo $cat_title;} ?>" class="form-control" name='title'> 
                                     <?php }} ?>
 
 
                                     <input type="text" class= "name-control" name="title">
                                 </div>
                                 <div class="form-group">
-                                    <input class="btn btn-primary" type="submit" name="submit" type="submit" value="update">
+                                    <input class="btn btn-primary" name="update" type="submit" value="update">
                                 </div>
                             </form>
                         </div>
@@ -99,7 +99,7 @@
                                     echo "<td>{$id}</td>";
                                     echo "<td>{$title}</td>";
                                     echo "<td><a href='categories.php?delete={$id}'>Delete</a></td>";
-                                    echo "<td><a href='categories.php?edit={$id}'>Update</a></td>";
+                                    echo "<td><a href='categories.php?edit={$id}'>Edit</a></td>";
                                     echo "</tr>";
                                     }
 

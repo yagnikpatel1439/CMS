@@ -1,6 +1,6 @@
 <?php
 
-function insert_category()
+function insertCategory() 
 {
     global $connection;
     if(isset($_POST['submit'])) {

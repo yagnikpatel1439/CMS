@@ -72,15 +72,15 @@
 
                         <?php // INSERT CATEGORY
                         
-                        insert_category()
+                        insertCategory()
                         
                         ?>
 
-                            <table class="table table-bordered table-hover">
+                            <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Id</th>
-                                        <th>Category Title</th>
+                                        <th scope="col">Id</th>
+                                        <th scope="col">Category Title</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -93,7 +93,7 @@
                                     <?php // DELETE CATEGORY 
 
                                     deleteCategory();
-                                    
+
                                     ?>
                                 </tbody>
                             </table>

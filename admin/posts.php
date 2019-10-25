@@ -31,8 +31,8 @@
                             case 'add_post':
                                 include "include/add_post.php";
                                 break;
-                            case '2':
-                                echo "Hey 2";
+                            case 'edit_post':
+                                include "include/edit_post.php";
                                 break;
                             case '3':
                                 echo "Hey 3";

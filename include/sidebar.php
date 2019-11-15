@@ -34,7 +34,8 @@
 
                     while ($row = mysqli_fetch_assoc($query_selection)) {
                         $title = $row['title'];
-                        echo "<a href='#'><li>{$title}</li></a>";
+                        $id = $row['id'];
+                        echo "<a href='category.php?category=$id'><li>{$title}</li></a>";
                     }
 
                 ?>

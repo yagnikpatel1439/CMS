@@ -31,9 +31,9 @@
                             case 'add_comment':
                                 include "include/add_comment.php";
                                 break;
-                            case 'edit_comment':
-                                include "include/edit_comment.php";
-                                break;
+                            // case 'edit_comment':
+                            //     include "include/edit_comment.php";
+                            //     break;
                             case '3':
                                 echo "Hey 3";
                                 break;

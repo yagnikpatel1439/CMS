@@ -31,9 +31,9 @@
                             case 'add_user':
                                 include "include/add_user.php";
                                 break;
-                            // case 'edit_user':
-                            //     include "include/edit_user.php";
-                            //     break;
+                            case 'edit_user':
+                                include "include/edit_user.php";
+                                break;
                             case '3':
                                 echo "Hey 3";
                                 break;

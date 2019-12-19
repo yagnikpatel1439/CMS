@@ -7,10 +7,10 @@
             <th>Lastname</th>
             <th>Email</th>
             <th>Role</th>
-            <th>Date</th>
-            <th>Approve</th>
-            <th>Unapprove</th>
+            <th>Change</th>
+            <th>Revert</th>
             <th>Delete</th>
+
         </tr>
     </thead>
     <tbody>
@@ -21,13 +21,13 @@
 
             while ($row = mysqli_fetch_assoc($select_users)) {
                 $user_id = $row['user_id'];
-                $user_post_id = $row['username'];
-                $user_author = $row['user_password'];
-                $user_content = $row['user_firstname'];
-                $user_email = $row['user_lastname'];
-                $user_status = $row['user_email'];
-                $user_date = $row['user_image'];
-                $user_date = $row['user_role'];
+                $username = $row['username'];
+                $user_password = $row['user_password'];
+                $user_firstname = $row['user_firstname'];
+                $user_lastname = $row['user_lastname'];
+                $user_email = $row['user_email'];
+                $user_image = $row['user_image'];
+                $user_role = $row['user_role'];
 
                 
                 echo "<tr>";
@@ -60,29 +60,29 @@
                 // }
 
 
-                echo "<td>$user_date</td>";
+                // echo "<td>$user_date</td>";
 
                
-                echo "<td><a href='users.php?approve={$user_id}'>Approve</a></td>";
-                echo "<td><a href='users.php?unapprove={$user_id}'>Unapprove</a></td>";
+                echo "<td><a href='users.php?change_to_admin={$user_id}'>Admin</a></td>";
+                echo "<td><a href='users.php?change_to_sub={$user_id}'>Subscriber</a></td>";
                 // echo "<td><a href='users.php?source=edit_user&p_id={$user_id}'>Update</a></td>";
                 echo "<td><a href='users.php?delete={$user_id}'>Delete</a></td>";
                 echo "</tr>";
             }
 
-            if (isset($_GET['approve'])) {
-                $the_user_id = $_GET['approve'];
+            if (isset($_GET['change_to_admin'])) {
+                $the_user_id = $_GET['change_to_admin'];
 
-                $query = "UPDATE users SET user_status = 'approved' WHERE user_id = $the_user_id";
-                $approve_query = mysqli_query($connection,$query);
+                $query = "UPDATE users SET user_role = 'admin'' WHERE user_id = $the_user_id";
+                $change_to_admin_query = mysqli_query($connection,$query);
                 header("Location: users.php");
             }
             
-            if (isset($_GET['unapprove'])) {
-                $the_user_id = $_GET['unapprove'];
+            if (isset($_GET['change_to_sub'])) {
+                $the_user_id = $_GET['change_to_sub'];
 
-                $query = "UPDATE users SET user_status = 'unapproved' WHERE user_id = $the_user_id";
-                $unapprove_query = mysqli_query($connection,$query);
+                $query = "UPDATE users SET user_role = 'change_to_sub' WHERE user_id = $the_user_id";
+                $change_to_sub_query = mysqli_query($connection,$query);
                 header("Location: users.php");
             }
 
@@ -90,7 +90,7 @@
                 $the_user_id = $_GET['delete'];
 
                 $query = "DELETE FROM users WHERE user_id = $the_user_id";
-                $delete_query = mysqli_query($connection,$query);
+                $delete_user_query = mysqli_query($connection,$query);
                 header("Location: users.php");
             }
             

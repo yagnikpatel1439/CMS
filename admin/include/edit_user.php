@@ -13,7 +13,7 @@ if (isset($_GET['edit_user'])) {
                 $user_firstname = $row['user_firstname'];
                 $user_lastname = $row['user_lastname'];
                 $user_email = $row['user_email'];
-                $user_image = $row['user_image'];
+                // $user_image = $row['user_image'];
                 $user_role = $row['user_role'];
 
             }
@@ -42,7 +42,6 @@ if (isset($_POST['edit_user'])) {
         $query .= "username = '{$username}', ";
         $query .= "user_email = '{$user_email}', ";
         $query .= "user_password = '{$user_password}' ";
-
         $query .= "WHERE user_id = '{$the_user_id}' ";
 
         $edit_user_query = mysqli_query($connection, $query);
@@ -52,7 +51,7 @@ if (isset($_POST['edit_user'])) {
 }
 
 ?>
-<form action="" method="user" enctype="multipart/form-data">
+<form action="users.php" method="post" enctype="multipart/form-data">
 
     <div class="form-group">
         <label for="author">Firstname</label>
@@ -105,7 +104,7 @@ if (isset($_POST['edit_user'])) {
     </div>
 
     <div class="form-group">
-        <input class="btn btn-primary" type="submit" value="Edit User" name="edit_user"> 
+        <input class="btn btn-primary" type="submit" value="Update User" name="edit_user"> 
     </div>
 
 </form>

@@ -1,5 +1,6 @@
 <?php
-if (isset($_POST['create_user'])) {
+if (isset($_POST['add_user'])) {
+    // echo "i was called!";
     $user_firstname = $_POST['user_firstname'];
     $user_lastname = $_POST['user_lastname'];
     $user_role = $_POST['user_role'];
@@ -17,7 +18,7 @@ if (isset($_POST['create_user'])) {
     // move_uploaded_file($user_image_temp, "../images/$user_image");
 
     $query = "INSERT INTO users(user_firstname, user_lastname, user_role, username, user_email, user_password) ";
-    $query .= "VALUES ({$user_firstname}, '{$user_lastname}', '{$user_role}', '{$username}', '{$user_email}', '{$user_password}')";
+    $query .= "VALUES ('{$user_firstname}', '{$user_lastname}', '{$user_role}', '{$username}', '{$user_email}', '{$user_password}')";
 
     $create_user_query = mysqli_query($connection,$query);
 
@@ -25,7 +26,7 @@ if (isset($_POST['create_user'])) {
 }
 
 ?>
-<form action="" method="user" enctype="multipart/form-data">
+<form action="" method="post" enctype="multipart/form-data">
 
     <div class="form-group">
         <label for="author">Firstname</label>
@@ -38,7 +39,7 @@ if (isset($_POST['create_user'])) {
     </div>
 
     <div class="form-group">
-        <select name="user_category" id="">
+        <select name="user_role" id="">
             <option value="subscriber">Select User</option>
             <option value="admin">Admin</option>
             <option value="subscriber">Subscriber</option>
@@ -68,7 +69,7 @@ if (isset($_POST['create_user'])) {
     </div>
 
     <div class="form-group">
-        <input class="btn btn-primary" type="submit" value="Publish User" name="create_user"> 
+        <input class="btn btn-primary" type="submit" value="Add User" name="add_user"> 
     </div>
 
 </form>

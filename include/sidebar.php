@@ -28,8 +28,7 @@
     </div>
 
     <span class="form-group-btn">
-            <button name="submit" class="btn btn-default" type="submit" value="search">
-                <span class="glyphicon glyphicon-search"></span>
+            <button name="login" class="btn btn-default" type="submit" value="login">Submit
             </button>
     </span>
     </form>

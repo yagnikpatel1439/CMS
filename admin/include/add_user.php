@@ -1,6 +1,7 @@
 <?php
 if (isset($_POST['add_user'])) {
     // echo "i was called!";
+    // $user_id = $_POST['user_id'];
     $user_firstname = $_POST['user_firstname'];
     $user_lastname = $_POST['user_lastname'];
     $user_role = $_POST['user_role'];
@@ -55,17 +56,17 @@ if (isset($_POST['add_user'])) {
 
     <div class="form-group">
         <label for="user_tags">Username</label>
-        <input type="text" name="usename" class="form-control">
+        <input type="text" name="username" class="form-control">
     </div>
 
     <div class="form-group">
         <label for="user_content">Email</label>
-        <input type="email" name="email" class="form-control"> 
+        <input type="email" name="user_email" class="form-control"> 
     </div>
 
     <div class="form-group">
         <label for="user_content">Password</label>
-        <input type="password" name="password" class="form-control"> 
+        <input type="password" name="user_password" class="form-control"> 
     </div>
 
     <div class="form-group">

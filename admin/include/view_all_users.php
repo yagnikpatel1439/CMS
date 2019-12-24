@@ -27,7 +27,7 @@
                 $user_firstname = $row['user_firstname'];
                 $user_lastname = $row['user_lastname'];
                 $user_email = $row['user_email'];
-                $user_image = $row['user_image'];
+                // $user_image = $row['user_image'];
                 $user_role = $row['user_role'];
 
                 

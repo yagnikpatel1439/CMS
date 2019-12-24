@@ -18,8 +18,8 @@
 
     <div class="well">
     <h4>Login</h4>
-    <form action="includes/login.php" method="post">
-    <div class="input-group">
+    <form action="include/login.php" method="post">
+    <div class="form-group">
         <input type="text" class="form-control" name="username" placeholder="Enter Username">
         
     </div>

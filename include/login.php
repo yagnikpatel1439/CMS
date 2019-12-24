@@ -29,7 +29,7 @@ if (isset($_POST['login'])) {
 
     if ($db_username !== $username && $db_user_password !== $password) {
 
-        header("Location: ../index.php");
+        header("Location: index.php");
 
     } elseif ($db_username == $username && $db_user_password == $password) {
         $_SESSION['username'] = $db_username; 

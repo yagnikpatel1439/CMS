@@ -144,7 +144,7 @@
                         </ul>
                     </li>
                     <li class="active">
-                        <a href="blank-page.html"><i class="fa fa-wa fa-file"></i>  Profile </a>
+                        <a href="profile.php"><i class="fa fa-wa fa-file"></i>  Profile </a>
                     </li>
                 </ul>
             </div>

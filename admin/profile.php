@@ -25,6 +25,41 @@ if (isset($_SESSION['username'])) {
 
 ?>
 
+<?php
+if (isset($_POST['edit_user'])) {
+    $user_firstname = $_POST['user_firstname'];
+    $user_lastname = $_POST['user_lastname'];
+    $user_role = $_POST['user_role'];
+
+    // $user_image = $_FILES['image']['name'];
+    // $user_image_temp = $_FILES['image']['tmp_name'];
+
+    $username = $_POST['username'];
+    $user_email = $_POST['user_email'];
+    $user_password = $_POST['user_password'];
+    // $user_date = date('d-m-y');
+    // $user_comment_count = 4;
+
+    // echo $user_status;
+    // move_uploaded_file($user_image_temp, "../images/$user_image");
+
+        $query = "UPDATE users SET ";
+        $query .= "user_firstname = '{$user_firstname}', ";
+        $query .= "user_lastname = '{$user_lastname}', ";
+        $query .= "user_role = '{$user_role}', ";
+        $query .= "username = '{$username}', ";
+        $query .= "user_email = '{$user_email}', ";
+        $query .= "user_password = '{$user_password}' ";
+        $query .= "WHERE username = '{$username}' ";
+
+        $edit_user_query = mysqli_query($connection, $query);
+
+       confirm($edit_user_query);
+
+}
+
+?>
+
 <html>
 <body>
 

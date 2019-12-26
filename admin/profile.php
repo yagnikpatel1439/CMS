@@ -1,8 +1,25 @@
 <?php include "include/admin_header.php" ?>
+<!-- <?php include "include/db.php" ?> -->
 
 <?php
 
 if (isset($_SESSION['username'])) {
+
+    $username = $_SESSION['username'];
+
+    $query = "SELECT * FROM users WHERE username = '{$username}'";
+    $select_user_profile_query  = mysqli_query($connection, $query);
+
+    while ($row = mysqli_fetch_array($select_user_profile_query)) {
+                $user_id = $row['user_id'];
+                $username = $row['username'];
+                $user_password = $row['user_password'];
+                $user_firstname = $row['user_firstname'];
+                $user_lastname = $row['user_lastname'];
+                $user_email = $row['user_email'];
+                // $user_image = $row['user_image'];
+                $user_role = $row['user_role'];
+    }
     
 }
 
@@ -80,7 +97,7 @@ if (isset($_SESSION['username'])) {
                             </div>
 
                             <div class="form-group">
-                                <input class="btn btn-primary" type="submit" value="Update User" name="edit_user"> 
+                                <input class="btn btn-primary" type="submit" value="Update Profile" name="edit_user"> 
                             </div>
 
                         </form>

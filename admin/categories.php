@@ -72,7 +72,7 @@
 
                         <?php // INSERT CATEGORY
                         
-                        insertCategory()
+                        insertCategory();
                         
                         ?>
 

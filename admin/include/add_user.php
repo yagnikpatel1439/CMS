@@ -24,6 +24,8 @@ if (isset($_POST['add_user'])) {
     $create_user_query = mysqli_query($connection,$query);
 
     confirm($create_user_query);
+
+    echo "User Created Successfully!" . " " . "<a href='users.php'>View Users</a>";
 }
 
 ?>

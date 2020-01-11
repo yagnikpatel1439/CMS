@@ -116,7 +116,7 @@
     </div>
 
     <div class="form-group">
-        <input class="btn btn-primary" type="submit" value="Update Post" name="update_post"> 
+        <input class="btn btn-primary" type="submit" value="Edit Post" name="edit_post"> 
     </div>
 
 </form>

@@ -21,9 +21,9 @@
     $post_status = $row['post_status'];
     }
 
-    if (isset($_POST['update_post'])) {
+    if (isset($_POST['edit_post'])) {
 
-        // echo "hi!";
+        echo "hi!";
         
         $post_title = $_POST['title'];
         $post_author = $_POST['author'];
@@ -58,13 +58,13 @@
         $query .= "post_image = '{$post_image}' ";
         $query .= "WHERE post_id = '{$post_id}', ";
 
-        $update_post = mysqli_query($connection, $query);
+        $edit_post = mysqli_query($connection, $query);
 
-        // confirm($update_post);
+        confirm($edit_post);
     }
 
 ?>
-<form action="" method="post" enctype="multipart/form-data">
+<form action="posts.php" method="post" enctype="multipart/form-data">
 
     <div class="form-group">
         <label for="title">Title</label>
@@ -95,8 +95,20 @@
     </div>
 
     <div class="form-group">
-        <label for="post_status">Post Status</label>
-        <input value="<?php echo $post_status; ?>" type="text" name="post_status" class="form-control">
+        <select name="post_status" id="">
+                <option value='<?php echo $post_status; ?>'><?php echo $post_status; ?></option>
+
+                <?php
+
+                if ($post_status == 'published') {
+                    echo "<option value='draft'>Draft</option>";
+                }else {
+                    echo "<option value='published'>Publish</option>";
+                }
+
+                ?>
+
+        </select>
     </div>
 
     <div class="form-group">
